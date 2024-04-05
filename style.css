@@ -1,0 +1,65 @@
+/* Estilos para la barra de navegación */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0e1216;
+}
+
+/* Estilos para el logo */
+.logo img {
+    height: 80px; /* Ajusta según el tamaño de tu logo */
+}
+
+/* Estilos para la sección de la derecha del menú de navegación */
+.top-nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para los enlaces de la sección derecha */
+.top-nav-right a {
+    text-decoration: none; /* Cambiado de "double" a "none" */
+    color: #ffffff;
+    margin-left: 20px;
+    font-size: 17px; /* Ajusta el tamaño de la fuente según necesites */
+}
+
+/* Estilo para cuando se pasa el mouse sobre los enlaces */
+.top-nav-right a:hover {
+    color: #ffc800; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para la barra de búsqueda */
+.search-container {
+    flex: 1; /* La barra de búsqueda ocupará todo el espacio disponible */
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center;
+}
+
+/* Estilos para el campo de búsqueda */
+.search-container input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px; /* Agregado margen derecho */
+}
+
+/* Estilos para el botón de búsqueda */
+.search-container button {
+    padding: 8px 16px;
+    background-color: yellow; /* Cambiado a color amarillo */
+    color: #0e1216; /* Cambiado a un color oscuro para el texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilo para cuando se pasa el mouse sobre el botón de búsqueda */
+.search-container button:hover {
+    background-color: #ffd700; /* Cambiado a un tono más claro de amarillo */
+}
