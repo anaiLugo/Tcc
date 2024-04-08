@@ -55,9 +55,30 @@
         <h2>Ubicación Actual</h2>
         <p id="latitude">Latitud: Cargando...</p>
         <p id="longitude">Longitud: Cargando...</p>
+        <p id="location-name">Nombre de la ubicación: Cargando...</p>
     </div>
 
     <script>
+        function toggleMenu() {
+            var categoriesList = document.getElementById('categoriesList');
+            if (categoriesList.style.display === 'block') {
+                categoriesList.style.display = 'none';
+            } else {
+                categoriesList.style.display = 'block';
+            }
+        }
+
+        function obtenerNombreUbicacion(lat, lon) {
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('location-name').textContent = 'Nombre de la ubicación: ' + data.display_name;
+                })
+                .catch(error => {
+                    console.error('Error al obtener el nombre de la ubicación:', error);
+                });
+        }
+
         window.onload = function() {
             const apiUrl = 'http://localhost:3000/api/empresa';
             fetch(apiUrl)
@@ -86,14 +107,18 @@
 
             if ("geolocation" in navigator) {
                 navigator.geolocation.getCurrentPosition(function(position) {
-                    document.getElementById('latitude').textContent = 'Latitud: ' + position.coords.latitude;
-                    document.getElementById('longitude').textContent = 'Longitud: ' + position.coords.longitude;
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    document.getElementById('latitude').textContent = 'Latitud: ' + lat;
+                    document.getElementById('longitude').textContent = 'Longitud: ' + lon;
+                    obtenerNombreUbicacion(lat, lon);
                 }, function(error) {
                     console.error('Error al obtener la ubicación:', error);
                 });
             } else {
                 document.getElementById('latitude').textContent = 'Geolocalización no es soportada por este navegador.';
                 document.getElementById('longitude').style.display = 'none';
+                document.getElementById('location-name').textContent = 'Geolocalización no es soportada por este navegador.';
             }
         };
     </script>
