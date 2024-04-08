@@ -162,3 +162,44 @@
         width: 90%;
     }
 }
+
+
+
+/* style.css */
+
+.empresa-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .empresa-container > div {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px;
+    background-color: white;
+  }
+  
+  .empresa-container h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .empresa-container p {
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .empresa-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .empresa-container a:hover {
+    text-decoration: underline;
+  }
+  

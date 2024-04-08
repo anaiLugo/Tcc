@@ -13,7 +13,43 @@
         <link rel="stylesheet" href="style.css">
          <!-- JavaScript -->
         <script src="script.js"></script>
+        <script>
+            // Esta función se ejecuta cuando se carga la página
+            window.onload = function() {
+              // Dirección de la API
+              const apiUrl = 'http://localhost:3000/api/empresa';
+          
+              // Realizar la solicitud a la API
+              fetch(apiUrl)
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                  }
+                  return response.json(); // Parseamos el JSON del cuerpo de la respuesta
+                })
+                .then(data => {
+                  const empresaListContainer = document.getElementById('empresa-list');
+                  const empresas = data.map(empresa => `
+                    <div>
+                      <h2>${empresa.empresa}</h2>
+                      <p>${empresa.razon_social}</p>
+                      <p>${empresa.direccion}</p>
+                      <p>${empresa.telefono}</p>
+                      <p><a href="mailto:${empresa.email}">${empresa.email}</a></p>
+                    </div>
+                  `).join(''); // Convertir cada empresa a HTML y unirlos en un solo string
+          
+                  empresaListContainer.innerHTML = empresas; // Insertar en el contenedor
+                })
+                .catch(error => {
+                  console.error('There has been a problem with your fetch operation:', error);
+                });
+            };
+          </script>
 
+
+
+          
     </head>
 <body>
     <header>
@@ -47,7 +83,14 @@
                 <a href="#wishlist"><i class="fas fa-heart" style="color: rgb(235, 111, 10);"></i> Lista de deseos</a> 
                 <a href="#cart"><i class="fas fa-shopping-cart" style="color: rgb(255, 133, 3);"></i> Carrito</a>
             </div>
+
+
+
+
+
         </div>
     </header>
+    <div id="empresa-list" class="empresa-container"></div>
+    
 </body>
 </html>
