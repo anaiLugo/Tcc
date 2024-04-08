@@ -166,4 +166,154 @@ a{
         text-align: center;
         margin-top: 15px; 
     }
+    .productos-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px; /* Espacio entre productos */
+        padding: 16px;
+    }
+    
+    .producto-item {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 240px; /* Ancho fijo para cada producto */
+        overflow: hidden; /* Asegura que todo el contenido se mantenga dentro del borde redondeado */
+    }
+    
+    .producto-item img {
+        width: 100%;
+        display: block;
+    }
+    
+    .producto-info {
+        padding: 8px;
+        background-color: #f8f8f8;
+    }
+    
+    .producto-titulo {
+        margin: 8px 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .producto-precio {
+        font-size: 16px;
+        color: #E44D26; /* Cambia este color como necesites */
+    }
+    
+    .producto-envio {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .producto-boton {
+        background-color: #FF9900; /* Color de botón, cambia como necesites */
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 8px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .producto-boton:hover {
+        background-color: #cc7a00;
+    }
+    
+    @media (max-width: 768px) {
+        .productos-container {
+            justify-content: center;
+        }
+    }
 
+    
+
+    .producto-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    .producto {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 300px;
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .producto-imagen {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+    }
+    
+    .producto-titulo {
+        color: #333;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    .producto-precio {
+        color: #E44D26;
+        font-size: 24px;
+        margin: 10px 0;
+    }
+    
+    .producto-envio {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .boton-agregar {
+        background-color: #FF9900;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        width: 100%;
+    }
+    
+    .boton-agregar:hover {
+        background-color: #cc7a00;
+    }
+    
+
+
+
+
+
+    .productos-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* O space-between, space-around, según tu diseño */
+        gap: 20px; /* Espacio entre productos */
+        padding: 20px; /* Espacio alrededor del contenedor */
+    }
+    
+    .producto {
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: calc(50% - 20px); /* Ajusta el ancho para 2 productos por fila, resta el doble del gap si lo usas */
+        margin-bottom: 20px; /* Espacio debajo de cada producto */
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+        .producto {
+            width: 100%; /* Los productos toman todo el ancho en pantallas pequeñas */
+        }
+    }
+    
