@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head> <!--caracteristicas--> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Titulo--> 
-    <title>Click Store</title>
-       <!-- Google Font -->
-       <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+        <title>Click Store</title>
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+         <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
        <!-- Css Styles -->
-       <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
+         <!-- JavaScript -->
+        <script src="script.js"></script>
 
     </head>
 <body>
     <header>
         <div class="top-nav">
             <a href="#home" class="logo">
-                <!--logo -->
+            <!--logo -->
                 <img src="img/logoCS.png" alt="Logo">
             </a>
-
+             <!-- Menú de categorías -->
+            <div class="category-dropdown">
+                <button class="category-dropdown-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars" style="color: orange;"></i> 
+                    <span style="color: white;">Categorias</span> 
+                </button> 
+                <ul class="categories-list" id="categoriesList">
+                    <li><a href="#">Electrónicos</a></li>
+                    <li><a href="#">Celulares</a></li>
+                    <li><a href="#">Moda & Belleza </a></li>
+                    <li><a href="#">Pcs y Accesorios</a></li>
+                    <li><a href="#">Automóviles</a></li>
+                </ul>
+            </div>
             <!-- Barra de búsqueda -->
             <div class="search-container">
                 <input type="text" placeholder="Buscar...">
-                <button type="submit">Buscar</button>
+                <button type="submit"><i class="fas fa-search"></i></button> <!-- Icono de búsqueda -->
             </div>
 
             <div class="top-nav-right">
-                <a target="_blank" href="login/login.html">Inicio de Sesión</a>
-                <a href="#wishlist">&#9825; Lista de Deseos</a> <!-- Entidad HTML para un corazón como placeholder -->
-                <a href="#cart">&#128722; Carrito</a> <!-- Entidad HTML para un carrito de compras como placeholder -->
+                <a target="_blank" href="login/login.html"><i class="fas fa-user"></i> Inicio de Sesión</a>
+                <a href="#wishlist"><i class="fas fa-heart" style="color: rgb(235, 111, 10);"></i> Lista de deseos</a> 
+                <a href="#cart"><i class="fas fa-shopping-cart" style="color: rgb(255, 133, 3);"></i> Carrito</a>
             </div>
         </div>
     </header>
-    
 </body>
 </html>
