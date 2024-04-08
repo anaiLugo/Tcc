@@ -2,7 +2,7 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-    connectionString: 'postgresql://vivemas_owner:CXNO0mfY6vGL@ep-jolly-hill-a5v062f9.us-east-2.aws.neon.tech/vivemas?sslmode=require',
+    connectionString: 'postgresql://Click%20Store_owner:q5GO1Uvhargz@ep-bold-hat-a51fyxuq.us-east-2.aws.neon.tech/Click%20Store?sslmode=require',
 });
 
 module.exports = pool;
