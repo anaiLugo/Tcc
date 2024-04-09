@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click Store</title>
@@ -18,7 +19,7 @@
             }
         }
     </script>
-    
+
 </head>
 
 <body>
@@ -29,9 +30,9 @@
             </a>
             <div class="category-dropdown">
                 <button class="category-dropdown-btn" onclick="toggleMenu()">
-                    <i class="fas fa-bars" style="color: orange;"></i> 
+                    <i class="fas fa-bars" style="color: orange;"></i>
                     <span style="color: white;">Categorias</span>
-                </button> 
+                </button>
                 <ul class="categories-list" id="categoriesList" style="display: none;">
                     <li><a href="#">Electrónicos</a></li>
                     <li><a href="#">Celulares</a></li>
@@ -46,11 +47,16 @@
             </div>
             <div class="top-nav-right">
                 <a target="_blank" href="login/login.html"><i class="fas fa-user"></i> Inicio de Sesión</a>
-                <a href="#wishlist"><i class="fas fa-heart" style="color: rgb(235, 111, 10);"></i> Lista de deseos</a> 
+                <a href="#wishlist"><i class="fas fa-heart" style="color: rgb(235, 111, 10);"></i> Lista de deseos</a>
                 <a href="#cart"><i class="fas fa-shopping-cart" style="color: rgb(255, 133, 3);"></i> Carrito</a>
             </div>
         </div>
     </header>
+
+
+
+
+
     
     <div class="productos-container">
         <div class="producto">
@@ -58,16 +64,38 @@
             <h3 class="producto-titulo">Totebook</h3>
             <p class="producto-precio">USD 229.99</p>
             <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 229.99" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Comprar</div>
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+
         </div>
         <div class="producto">
             <img src="img/teclado.png" alt="Nombre del producto" class="producto-imagen">
             <h3 class="producto-titulo">Teclado</h3>
-            <p class="producto-precio">USD 229.99</p>
+            <p class="producto-precio">USD 54</p>
             <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Comprar</div>
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </span>
+                </div>
+            </div>
         </div>
         <!-- Agrega más divs de producto aquí para más productos -->
     </div>
-    
+
 
 
 
@@ -101,8 +129,8 @@
                 });
         }
 
-            
-        window.onload = function() {
+
+        window.onload = function () {
             const apiUrl = 'http://localhost:3000/api/empresa';
             fetch(apiUrl)
                 .then(response => {
@@ -129,13 +157,13 @@
                 });
 
             if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function(position) {
+                navigator.geolocation.getCurrentPosition(function (position) {
                     const lat = position.coords.latitude;
                     const lon = position.coords.longitude;
                     document.getElementById('latitude').textContent = 'Latitud: ' + lat;
                     document.getElementById('longitude').textContent = 'Longitud: ' + lon;
                     obtenerNombreUbicacion(lat, lon);
-                }, function(error) {
+                }, function (error) {
                     console.error('Error al obtener la ubicación:', error);
                 });
             } else {
@@ -144,7 +172,8 @@
                 document.getElementById('location-name').textContent = 'Geolocalización no es soportada por este navegador.';
             }
         };
-        
+
     </script>
 </body>
+
 </html>
