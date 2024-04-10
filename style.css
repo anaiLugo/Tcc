@@ -337,10 +337,18 @@
   .button:hover:before {
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
   }
+  /*****/
   
-  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
   
 
 
   
+  .container {
+    width: 80%;
+    margin: auto;
+  }
   

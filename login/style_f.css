@@ -316,4 +316,16 @@ a{
             width: 100%; /* Los productos toman todo el ancho en pantallas pequeñas */
         }
     }
-    
+    /********/
+    @media screen and (max-width: 600px) {
+        /* Estilos para teléfonos */
+      }
+      
+      @media screen and (min-width: 601px) and (max-width: 1024px) {
+        /* Estilos para tabletas */
+      }
+      
+      @media screen and (min-width: 1025px) {
+        /* Estilos para computadoras de escritorio */
+      }
+      
