@@ -15,4 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         signupForm.style.display = 'none';
         loginForm.style.display = 'block';
     });
+
 });
+

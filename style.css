@@ -9,14 +9,14 @@
 
 /* Estilos para el logo */
 .logo img {
-    height: 80px; 
+    height: 60px; 
 }
 
 /* Estilos para la sección de la derecha del menú de navegación */
 .top-nav-right {
     display: flex;
     align-items: center;
-    margin: 30px;
+    margin: 0 10px;
     
 }
 /* Estilos para los iconos en la sección top-nav-right */
@@ -29,7 +29,7 @@
     text-decoration: none; 
     color: #ffffff;
     margin-left: 20px;
-    font-size: 17px; /* Ajusta el tamaño de la fuente según necesites */
+    font-size: 17px;
 }
 
 /* Estilo para cuando se pasa el mouse sobre los enlaces */
@@ -93,7 +93,7 @@
 
 .categories-list li a {
     text-decoration: none;
-    color: #333;
+    color: #020202;
     display: block;
     padding: 5px 20px;
 }
@@ -101,14 +101,16 @@
 .categories-list li a:hover {
     background-color: #f0f0f0;
 }
-
+.category-dropdown-btn, .search-container button {
+  padding: 5px 10px; 
+}
 /* Mostrar la lista de categorías cuando el botón es clickeado */
 .category-dropdown-btn.clicked + .categories-list {
     display: block;
 }
 /* Estilos para el botón de menú */
 .category-dropdown-btn {
-    background-color: #1d1e1f;
+    background-color: #010101;
     color: #fff;
     border: none;
     padding: 10px;
@@ -126,12 +128,12 @@
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
-    width: 200px; /* Ancho del panel de categorías */
+    width: 200px; 
     background-color: #fff;
     padding: 10px;
     border: 1px solid #ccc;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra */
-    z-index: 1; /* Asegura que el panel esté por encima de otros elementos */
+    box-shadow: 0px 8px 16px 0px rgba(14, 13, 13, 0.2);
+    z-index: 1; 
 }
 
 .categories-list li {
@@ -140,12 +142,12 @@
 
 .categories-list li a {
     text-decoration: none;
-    color: #333;
+    color: #020202;
     display: block;
 }
 
 .categories-list li a:hover {
-    background-color: #f0f0f0;
+    background-color: #db7f00;
 }
 
 /* Mostrar la lista de categorías cuando el botón es clickeado */
@@ -154,7 +156,7 @@
 }
 /* Estilos para el botón de menú */
 .category-dropdown-btn i {
-    margin-right: 5px; /* Añade espacio entre el icono y el texto */
+    margin-right: 5px; 
 }
 /* Responsividad */
 @media (max-width: 768px) {
@@ -186,10 +188,6 @@
     height: auto;
 }
 
-/* Tus otros estilos... */
-
-
-/* style.css */
 
 .empresa-container {
     display: flex;
@@ -314,7 +312,7 @@
   }
   
   .button:hover {
-    background: #222;
+    background: #010101;
   }
   
   .button:hover .text {
@@ -338,7 +336,57 @@
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
   }
   
-  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .top-nav {
+        justify-content: space-between; 
+        padding: 10px 5px;
+    }
+
+  .search-container, .top-nav-right {
+      width: 100%;
+      justify-content: center;
+      margin-top: 20px;
+  }
+
+  .search-container input[type="text"] {
+      width: auto;
+      flex-grow: 1;
+  }
+
+  .productos-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .producto {
+      width: 90%; /* Los productos ocupan más espacio en móviles */
+  }
+}
+
+/* Ajustes adicionales para hacer los contenedores de productos más responsivos */
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.producto {
+  width: calc(50% - 20px); /* Ajusta esto según prefieras */
+  margin: 10px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .producto {
+      width: calc(33% - 20px); /* Tres productos por fila en tabletas */
+  }
+}
+
+@media (max-width: 767px) {
+  .producto {
+      width: 100%; /* Un producto por fila en móviles */
+  }
+}
   
 
 

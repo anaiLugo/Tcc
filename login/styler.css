@@ -5,42 +5,41 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("fondo.png"); 
+    background-color: rgb(247, 247, 247);
     background-size: cover; 
-    background-position: center; /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .form {
-    background: rgb(147, 187, 236);
+    background: rgb(255, 255, 255);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: none; /* Ocultar formularios inicialmente */
+    display: none; 
+    width: 400px; 
+    min-height: 300px; 
+    margin: auto; 
 }
-/* Centrar contenido en el formulario */
-.form h2, .form .input-box, .form .button, .form .login_signup {
-    text-align: center; /* Centra el texto y cualquier elemento inline dentro del formulario */
+
+.form h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-decoration-color: coral;
+    font-style: inherit;
+    font-weight: 500; 
 }
 
 .input-box input {
-    width: calc(100% - 26px); /* Ajustamos el 100% menos el padding o cualquier otro ajuste necesario */
-    box-sizing: border-box; /* Asegura que el padding y border sean incluidos en el ancho total */
-}
-
-/* Ajustes para el logo */
-.logo-container img {
-    width: 100px; /* Ajusta esto según el tamaño deseado de tu logo */
-    height: auto; /* Mantiene la proporción del logo */
-    margin-bottom: 20px; /* Espacio debajo del logo */
+    width: calc(100% - 26px); 
+    box-sizing: border-box; 
 }
 
 /* Ajustes de los campos de entrada */
 .input-box {
-    margin: 13px 0; /* Espaciado entre campos de entrada */
+    margin: 13px 0; 
 }
 
-/* Mostrar el primer formulario */
 .Login-form {
     display: block;
 }
