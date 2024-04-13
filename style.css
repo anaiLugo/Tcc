@@ -352,3 +352,26 @@
     margin: auto;
   }
   
+
+
+  .productos-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.producto {
+    flex: 1 1 300px; /* Esto es opcional para controlar el ancho de cada producto */
+    margin: 10px;
+    text-align: center;
+}
+
+
+
+
+.producto {
+  flex: 1 1 calc(33.33% - 20px); /* Esto divide el contenedor en tres columnas y agrega márgenes */
+  margin: 10px;
+  text-align: center;
+  box-sizing: border-box; /* Esto incluye el padding y el borde en el ancho */
+}
+
