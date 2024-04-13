@@ -335,60 +335,14 @@
   .button:hover:before {
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
   }
+  /*****/
   
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .top-nav {
-        justify-content: space-between; 
-        padding: 10px 5px;
-    }
-
-  .search-container, .top-nav-right {
-      width: 100%;
-      justify-content: center;
-      margin-top: 20px;
-  }
-
-  .search-container input[type="text"] {
-      width: auto;
-      flex-grow: 1;
-  }
-
-  .productos-container {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .producto {
-      width: 90%; /* Los productos ocupan más espacio en móviles */
-  }
-}
-
-/* Ajustes adicionales para hacer los contenedores de productos más responsivos */
-.productos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.producto {
-  width: calc(50% - 20px); /* Ajusta esto según prefieras */
-  margin: 10px;
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .producto {
-      width: calc(33% - 20px); /* Tres productos por fila en tabletas */
-  }
-}
-
-@media (max-width: 767px) {
-  .producto {
-      width: 100%; /* Un producto por fila en móviles */
-  }
-}
+  
   
 
-
   
+  .container {
+    width: 80%;
+    margin: auto;
+  }
   
