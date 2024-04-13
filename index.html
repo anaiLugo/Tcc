@@ -13,6 +13,7 @@
     <script>
         // Definición de la función toggleMenu()
         function toggleMenu() {
+
             var categoriesList = document.getElementById('categoriesList');
             if (categoriesList.style.display === 'block') {
                 categoriesList.style.display = 'none';
@@ -63,7 +64,7 @@
     <div class="productos-container">
         <div class="producto">
             <img src="img/notebook.png" alt="Nombre del producto" class="producto-imagen">
-            <h3 class="producto-titulo">Totebook</h3>
+            <h3 class="producto-titulo">Notebook</h3>
             <p class="producto-precio">USD 229.99</p>
             <p class="producto-envio">Entrega el mié, 24 de abr</p>
             <div data-tooltip="USD 229.99" class="button">
@@ -111,6 +112,53 @@
                 </div>
             </div>
         </div>
+        <div class="producto">
+            <img src="img/Monitor.png" alt="Nombre del producto" class="producto-imagen">
+            <h3 class="producto-titulo">Monitor</h3>
+            <p class="producto-precio">USD 550</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 550" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Comprar</div>
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="img/Auricular.png" alt="Nombre del producto" class="producto-imagen">
+            <h3 class="producto-titulo">Auricular</h3>
+            <p class="producto-precio">USD 35</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 35" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Comprar</div>
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div><div class="producto">
+            <img src="img/Gabinete.png" alt="Nombre del producto" class="producto-imagen">
+            <h3 class="producto-titulo">Gabinete</h3>
+            <p class="producto-precio">USD 250</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 250" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Comprar</div>
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
         <!-- Agrega más divs de producto aquí para más productos -->
 
     </div>
@@ -141,7 +189,7 @@
             fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('location-name').textContent = 'Resultados basedos en la ubicación: ' + data.display_name;
+                    document.getElementById('location-name').textContent = 'Resultados basados en la ubicación: ' + data.display_name;
                 })
                 .catch(error => {
                     console.error('Error al obtener el nombre de la ubicación:', error);
