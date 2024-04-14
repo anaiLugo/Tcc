@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script>
+        
         // Definición de la función toggleMenu()
         function toggleMenu() {
-
             var categoriesList = document.getElementById('categoriesList');
             if (categoriesList.style.display === 'block') {
                 categoriesList.style.display = 'none';
@@ -26,6 +26,8 @@
 </head>
         
 <body>
+    <script src="script.js"></script>
+
     <header>
         <div class="top-nav">
             <a href="#home" class="logo">
@@ -37,11 +39,12 @@
                     <span style="color: white;">Categorias</span>
                 </button>
                 <ul class="categories-list" id="categoriesList" style="display: none;">
-                    <li><a href="#">Electrónicos</a></li>
-                    <li><a href="#">Celulares</a></li>
-                    <li><a href="#">Moda & Belleza</a></li>
-                    <li><a href="#">Pcs y Accesorios</a></li>
-                    <li><a href="#">Automóviles</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('todos'); return false;">Todos</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('electronica'); return false;">Electrónicos</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('celulares'); return false;">Celulares</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('moda'); return false;">Moda & Belleza</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('pcs'); return false;">PCs y Accesorios</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('automoviles'); return false;">Automóviles</a></li>
                 </ul>
             </div>
             <div class="search-container">
@@ -55,15 +58,10 @@
             </div>
         </div>
     </header>
-
-
-
-
-
     
     <div class="productos-container">
-        <div class="producto">
-            <img src="img/notebook.png" alt="Nombre del producto" class="producto-imagen">
+        <div class="producto" data-categoria="electronica">
+            <img src="img/notebook.png" alt="Notebook" class="producto-imagen">
             <h3 class="producto-titulo">Notebook</h3>
             <p class="producto-precio">USD 229.99</p>
             <p class="producto-envio">Entrega el mié, 24 de abr</p>
@@ -77,11 +75,44 @@
                     </span>
                 </div>
             </div>
-
-
         </div>
-        <div class="producto">
-            <img src="img/teclado.png" alt="Nombre del producto" class="producto-imagen">
+
+            <div class="producto" data-categoria="electronica">
+                <img src="img/JBL.png" alt="Altavoz JBL" class="producto-imagen">
+                <h3 class="producto-titulo">Altavoz JBL</h3>
+                <p class="producto-precio">USD 99.99</p>
+                <p class="producto-envio">Entrega el mié, 24 de abr</p>
+                <div data-tooltip="USD 99.99" class="button">
+                    <div class="button-wrapper">
+                        <div class="text">Comprar</div>
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-categoria="electronica">
+                <img src="img/Impresora.png" alt="Impresora" class="producto-imagen">
+                <h3 class="producto-titulo">Impresora</h3>
+                <p class="producto-precio">USD 99.99</p>
+                <p class="producto-envio">Entrega el mié, 24 de abr</p>
+                <div data-tooltip="USD 99.99" class="button">
+                    <div class="button-wrapper">
+                        <div class="text">Comprar</div>
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto" data-categoria="pcs">
+            <img src="img/teclado.png" alt="Teclado" class="producto-imagen">
             <h3 class="producto-titulo">Teclado</h3>
             <p class="producto-precio">USD 54</p>
             <p class="producto-envio">Entrega el mié, 24 de abr</p>
@@ -96,7 +127,8 @@
                 </div>
             </div>
         </div>
-        <div class="producto">
+
+        <div class="producto" data-categoria="celulares">
             <img src="img/telefono.png" alt="Nombre del producto" class="producto-imagen">
             <h3 class="producto-titulo">Telefono</h3>
             <p class="producto-precio">USD 54</p>
@@ -112,59 +144,279 @@
                 </div>
             </div>
         </div>
-        <div class="producto">
-            <img src="img/Monitor.png" alt="Nombre del producto" class="producto-imagen">
-            <h3 class="producto-titulo">Monitor</h3>
-            <p class="producto-precio">USD 550</p>
-            <p class="producto-envio">Entrega el mié, 24 de abr</p>
-            <div data-tooltip="USD 550" class="button">
-                <div class="button-wrapper">
-                    <div class="text">Comprar</div>
-                    <span class="icon">
-                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                            xmlns="http://www.w3.org/2000/svg">
-                        </svg>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="producto">
-            <img src="img/Auricular.png" alt="Nombre del producto" class="producto-imagen">
-            <h3 class="producto-titulo">Auricular</h3>
-            <p class="producto-precio">USD 35</p>
-            <p class="producto-envio">Entrega el mié, 24 de abr</p>
-            <div data-tooltip="USD 35" class="button">
-                <div class="button-wrapper">
-                    <div class="text">Comprar</div>
-                    <span class="icon">
-                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                            xmlns="http://www.w3.org/2000/svg">
-                        </svg>
-                    </span>
-                </div>
-            </div>
-        </div><div class="producto">
-            <img src="img/Gabinete.png" alt="Nombre del producto" class="producto-imagen">
-            <h3 class="producto-titulo">Gabinete</h3>
-            <p class="producto-precio">USD 250</p>
-            <p class="producto-envio">Entrega el mié, 24 de abr</p>
-            <div data-tooltip="USD 250" class="button">
-                <div class="button-wrapper">
-                    <div class="text">Comprar</div>
-                    <span class="icon">
-                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                            xmlns="http://www.w3.org/2000/svg">
-                        </svg>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <!-- Agrega más divs de producto aquí para más productos -->
 
+        <div class="producto" data-categoria="celulares">
+            <img src="img/telefono1.png" alt="Nombre del producto" class="producto-imagen">
+            <h3 class="producto-titulo">Telefono</h3>
+            <p class="producto-precio">USD 54</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Comprar</div>
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                            xmlns="http://www.w3.org/2000/svg">
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+   
+    <div class="producto" data-categoria="celulares">
+        <img src="img/Telefono2.png" alt="Nombre del producto" class="producto-imagen">
+        <h3 class="producto-titulo">Telefono</h3>
+        <p class="producto-precio">USD 54</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="producto" data-categoria="pcs">
+        <img src="img/Auricular.png" alt="Nombre del producto" class="producto-imagen">
+        <h3 class="producto-titulo">Auricular</h3>
+        <p class="producto-precio">USD 40</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="producto" data-categoria="moda">
+        <img src="img/Abrigo.png" alt="Nombre del producto" class="producto-imagen">
+        <h3 class="producto-titulo">Abrigo</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="producto" data-categoria="moda">
+        <img src="img/Vestido.png" alt="Vestido" class="producto-imagen">
+        <h3 class="producto-titulo">Vestido</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="producto" data-categoria="moda">
+        <img src="img/SkinCare.png" alt="SkinCare" class="producto-imagen">
+        <h3 class="producto-titulo">Skin Care</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="producto" data-categoria="moda">
+        <img src="img/SkinCare1.png" alt="SkinCare" class="producto-imagen">
+        <h3 class="producto-titulo">Skin Care</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="producto" data-categoria="moda">
+        <img src="img/SkinCare2.png" alt="SkinCare" class="producto-imagen">
+        <h3 class="producto-titulo">Skin Care</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="producto" data-categoria="moda">
+        <img src="img/Conjunto.png" alt="Set falda y crop" class="producto-imagen">
+        <h3 class="producto-titulo">Set falda y crop</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
     </div>
 
 
+    <div class="producto" data-categoria="pcs">
+        <img src="img/Accesorios1.png" alt="Accesorios" class="producto-imagen">
+        <h3 class="producto-titulo">Accesorios</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="producto" data-categoria="pcs">
+        <img src="img/Monitor.png" alt="Monitor" class="producto-imagen">
+        <h3 class="producto-titulo">Monitor</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
 
+    <div class="producto" data-categoria="pcs">
+        <img src="img/Gabinete.png" alt="Gabinete" class="producto-imagen">
+        <h3 class="producto-titulo">Gabinete</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="producto" data-categoria="pcs">
+        <img src="img/Mouse.png" alt="Mouse Gaming" class="producto-imagen">
+        <h3 class="producto-titulo">Mouse Gaming</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="producto" data-categoria="automoviles">
+        <img src="img/Automóviles.png" alt="Accesorios" class="producto-imagen">
+        <h3 class="producto-titulo">Accesorios</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="producto" data-categoria="automoviles">
+        <img src="img/Automóviles1.png" alt="Accesorios" class="producto-imagen">
+        <h3 class="producto-titulo">Accesorios</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="producto" data-categoria="automoviles">
+        <img src="img/Automóviles2.png" alt="Accesorios" class="producto-imagen">
+        <h3 class="producto-titulo">Accesorios</h3>
+        <p class="producto-precio">USD 23</p>
+        <p class="producto-envio">Entrega el mié, 24 de abr</p>
+        <div data-tooltip="USD 54" class="button">
+            <div class="button-wrapper">
+                <div class="text">Comprar</div>
+                <span class="icon">
+                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
 
 
     <div id="empresa-list" class="empresa-container"></div>
@@ -189,7 +441,7 @@
             fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('location-name').textContent = 'Resultados basados en la ubicación: ' + data.display_name;
+                    document.getElementById('location-name').textContent = 'Resultados basedos en la ubicación: ' + data.display_name;
                 })
                 .catch(error => {
                     console.error('Error al obtener el nombre de la ubicación:', error);
