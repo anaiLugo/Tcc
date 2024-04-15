@@ -9,6 +9,8 @@
     <title>Click Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <script>
         
@@ -33,20 +35,6 @@
             <a href="#home" class="logo">
                 <img src="img/logoCS.png" alt="Logo">
             </a>
-            <div class="category-dropdown">
-                <button class="category-dropdown-btn" onclick="toggleMenu()">
-                    <i class="fas fa-bars" style="color: orange;"></i>
-                    <span style="color: white;">Categorias</span>
-                </button>
-                <ul class="categories-list" id="categoriesList" style="display: none;">
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('todos'); return false;">Todos</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('electronica'); return false;">Electrónicos</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('celulares'); return false;">Celulares</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('moda'); return false;">Moda & Belleza</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('pcs'); return false;">PCs y Accesorios</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('automoviles'); return false;">Automóviles</a></li>
-                </ul>
-            </div>
             <div class="search-container">
                 <input type="text" placeholder="Buscar...">
                 <button type="submit"><i class="fas fa-search"></i></button>
@@ -57,8 +45,43 @@
                 <a href="#cart"><i class="fas fa-shopping-cart" style="color: rgb(255, 133, 3);"></i> Carrito</a>
             </div>
         </div>
+        <div class="category-dropdown">
+            <button class="category-dropdown-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+                <span>Categorías</span>
+            </button>
+            <span class="home-text" onclick="mostrarProductosDestacados()">
+                <i class="fas fa-home"></i> Home
+            </span>
+            <span class="store-text">
+                <i class="fas fa-store"></i> Tiendas
+            </span>
+            <span class="brand-text">
+                <i class="fas fa-tags"></i> Marcas
+            </span>
+                <ul class="categories-list" id="categoriesList" style="display: none;">
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('todos'); return false;">Todos</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('electronica'); return false;">Electrónicos</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('celulares'); return false;">Celulares</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('moda'); return false;">Moda & Belleza</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('pcs'); return false;">PCs y Accesorios</a></li>
+                    <li><a href="#" onclick="mostrarProductosPorCategoria('automoviles'); return false;">Automóviles</a></li>
+                </ul>
+            </div>           
     </header>
-    
+
+    <div id="productosDestacados" style="display: none;">
+        <!-- Aquí irán los productos destacados con su texto e imágenes -->
+        <h2 class="slider-title">Productos Destacados</h2>
+        <div class="slider-container">
+            <img src="img/inicio.png" alt="Notebook" class="slider-img">
+            <img src="img/inicio1.png" alt="Altavoz JBL" class="slider-img">
+            <img src="img/inicio2.png" alt="Teclado" class="slider-img">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    </div>
+
+
     <div class="productos-container">
         <div class="producto" data-categoria="electronica">
             <img src="img/notebook.png" alt="Notebook" class="producto-imagen">

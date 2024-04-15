@@ -1,10 +1,20 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Asegura que ocupa toda la ventana */
+  box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+  font-family: 'Roboto', sans-serif;
+}
+
 /* contenedor */
 .top-nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #0e1216;
+    box-sizing: border-box;
 }
 
 /* Estilos para el logo */
@@ -21,7 +31,7 @@
 }
 /* Estilos para los iconos en la sección top-nav-right */
 .top-nav-right a i {
-    color: #ff4d00; 
+    color:  #db7f00; 
 }
 
 /* Estilos para los enlaces de la sección derecha */
@@ -72,19 +82,17 @@
 }
 /* Estilos para el botón de menú */
 .category-dropdown-btn {
-    background-color: #040b14;
-    color: #fff;
+    background-color: transparent;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1.2em; /* Tamaño más grande para 'Categorías' */
+    font-weight: bold; 
 }
 
-/* Estilos para la lista de categorías */
-.categories-list {
-    display: none;
-    list-style-type: none;
-    padding: 10px;
-    margin: 10px;
+.categories-list.show {
+  display: block;
 }
 
 .categories-list li {
@@ -98,27 +106,57 @@
     padding: 5px 20px;
 }
 
+.category-dropdown {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: start; 
+  gap: 20px; /* Espacio entre elementos */
+  box-sizing: border-box;
+}
+.home-text, .store-text, .brand-text {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #db7f00;
+  font-weight: bold;
+  text-decoration: none;
+}
+.category-dropdown-btn, .home-text, .store-text, .brand-text {
+  font-family: Arial, sans-serif; 
+  color: rgb(15, 15, 15); 
+}
+.home-text {
+  margin-left: auto; 
+}
 .categories-list li a:hover {
     background-color: #f0f0f0;
 }
-.category-dropdown-btn, .search-container button {
-  padding: 5px 10px; 
-}
+
 /* Mostrar la lista de categorías cuando el botón es clickeado */
 .category-dropdown-btn.clicked + .categories-list {
     display: block;
 }
-/* Estilos para el botón de menú */
+/* Estilos para el botón categoria */
 .category-dropdown-btn {
-    background-color: #010101;
-    color: #fff;
+    background-color: transparent;
     border: none;
     padding: 10px;
     cursor: pointer;
+    align-items: center;
+    color: #0d0c0a; 
 }
 
 /* Estilos para el contenedor del menú de categorías */
 .category-dropdown {
+    display: flex;
+    align-items: center;
     position: relative;
 }
 
@@ -134,8 +172,13 @@
     border: 1px solid #ccc;
     box-shadow: 0px 8px 16px 0px rgba(14, 13, 13, 0.2);
     z-index: 1; 
+    list-style-type: none;
 }
 
+.category-dropdown-btn i, .home-text i, .store-text i, .brand-text i {
+  color:  #db7f00;  
+  margin-right: 3px; 
+}
 .categories-list li {
     padding: 5px 0;
 }
@@ -158,12 +201,18 @@
 .category-dropdown-btn i {
     margin-right: 5px; 
 }
-/* Responsividad */
+
 @media (max-width: 768px) {
-    .form {
-        width: 90%;
-    }
+  .top-nav, .category-dropdown {
+      flex-direction: column; /* Alinea los elementos verticalmente en pantallas pequeñas */
+      padding: 10px;
+  }
+
+  .category-dropdown-btn, .home-text, .store-text, .brand-text {
+      padding: 5px 0; /* Espaciado vertical para elementos apilados */
+  }
 }
+
 
 .productos-container {
     display: flex;
@@ -172,17 +221,15 @@
     align-items: stretch; /* Estira los elementos para que tengan la misma altura */
 }
 
-
-
-
 .producto-imagen {
-  max-width: 100%;
-  height: 200px; 
-  object-fit: contain;
-  display: block;
-  margin-bottom: 10px;
+  width: 100%; /* Asegura que la imagen ocupa todo el ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-height: 200px; /* Limita la altura máxima de la imagen */
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro de su contenedor sin ser recortada */
+  border-radius: 5px; /* Opcional: añade bordes redondeados a la imagen */
+  display: block; /* Asegura que la imagen no tenga espacio extra alrededor */
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto debajo de ella */
 }
-
 .empresa-container {
     display: flex;
     flex-direction: column;
@@ -204,7 +251,8 @@
     color: #333;
     margin-bottom: 10px;
   }
-  
+
+
   .empresa-container p {
     color: #666;
     line-height: 1.5;
@@ -229,7 +277,6 @@
     --button-color: #222;
     --tooltip-color: #fff;
     width: var(--width);
-    padding: 10px 20px;
     height: var(--height);
     background: var(--button-color);
     position: relative;
@@ -239,8 +286,6 @@
     transition: background 0.3s;
     cursor: pointer;
     border: none;
-    background-color: #222;
-    color: #fff;
   }
   
   .button::before {
@@ -362,6 +407,40 @@
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border: 1px solid #ddd;
-  width: calc(50% - 40px); /* Ajusta el ancho al 50% menos los márgenes */
+  width: calc(50% - 40px); 
   text-align: center;
+}
+.main-container {
+  text-align: center; 
+  position: relative; 
+  padding: 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.slider-title {
+  font-size: 24px; /* Tamaño del título */
+  color: #333; /* Color del texto */
+  padding: 10px 0; /* Espacio arriba y abajo del título */
+  margin-bottom: 20px; /* Espacio debajo del título antes del slider */
+}
+
+.slider-container {
+  margin: auto;
+  max-width: 800px;
+
+}
+.slider-container {
+  width: 100%;
+  overflow: hidden; 
+}
+
+.slider-img {
+  width: 100%;
+  display: block; 
+  transition: transform 0.5s ease-in-out; 
+}
+
+#productosDestacados, #categoriesList {
+  transition: all 0.3s ease;  
 }
