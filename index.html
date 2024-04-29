@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="style.css">
     <script>
-        
+
         // Definición de la función toggleMenu()
         function toggleMenu() {
             var categoriesList = document.getElementById('categoriesList');
@@ -26,7 +26,7 @@
     </script>
 
 </head>
-        
+
 <body>
     <script src="script.js"></script>
 
@@ -59,15 +59,17 @@
             <span class="brand-text">
                 <i class="fas fa-tags"></i> Marcas
             </span>
-                <ul class="categories-list" id="categoriesList" style="display: none;">
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('todos'); return false;">Todos</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('electronica'); return false;">Electrónicos</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('celulares'); return false;">Celulares</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('moda'); return false;">Moda & Belleza</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('pcs'); return false;">PCs y Accesorios</a></li>
-                    <li><a href="#" onclick="mostrarProductosPorCategoria('automoviles'); return false;">Automóviles</a></li>
-                </ul>
-            </div>           
+            <ul class="categories-list" id="categoriesList" style="display: none;">
+                <li><a href="#" onclick="mostrarProductosPorCategoria('todos'); return false;">Todos</a></li>
+                <li><a href="#" onclick="mostrarProductosPorCategoria('electronica'); return false;">Electrónicos</a>
+                </li>
+                <li><a href="#" onclick="mostrarProductosPorCategoria('celulares'); return false;">Celulares</a></li>
+                <li><a href="#" onclick="mostrarProductosPorCategoria('moda'); return false;">Moda & Belleza</a></li>
+                <li><a href="#" onclick="mostrarProductosPorCategoria('pcs'); return false;">PCs y Accesorios</a></li>
+                <li><a href="#" onclick="mostrarProductosPorCategoria('automoviles'); return false;">Automóviles</a>
+                </li>
+            </ul>
+        </div>
     </header>
 
     <div id="productosDestacados" style="display: none;">
@@ -84,7 +86,7 @@
 
     <div class="productos-container">
         <div class="producto" data-categoria="electronica">
-            
+
             <img src="img/notebook.png" alt="Notebook" class="producto-imagen">
             <h3 class="producto-titulo">Notebook</h3>
             <p class="producto-precio">USD 229.99</p>
@@ -92,56 +94,56 @@
             <div data-tooltip="USD 229.99" class="button">
                 <div class="button-wrapper">
                     <div class="text">Ver</div>
-                    <a  href="producto.html">
-                    <span class="icon">
-                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                            xmlns="http://www.w3.org/2000/svg">
-                        </svg>
-                    </span>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
                     </a>
                 </div>
             </div>
         </div>
 
-            <div class="producto" data-categoria="electronica">
-                <img src="img/JBL.png" alt="Altavoz JBL" class="producto-imagen">
-                <h3 class="producto-titulo">Altavoz JBL</h3>
-                <p class="producto-precio">USD 99.99</p>
-                <p class="producto-envio">Entrega el mié, 24 de abr</p>
-                <div data-tooltip="USD 99.99" class="button">
-                    <div class="button-wrapper">
-                        <div class="text">Ver</div>
-                        <a  href="producto.html">
+        <div class="producto" data-categoria="electronica">
+            <img src="img/JBL.png" alt="Altavoz JBL" class="producto-imagen">
+            <h3 class="producto-titulo">Altavoz JBL</h3>
+            <p class="producto-precio">USD 99.99</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 99.99" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
                         <span class="icon">
                             <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
                                 xmlns="http://www.w3.org/2000/svg">
                             </svg>
                         </span>
-                        </a>
-                    </div>
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <div class="producto" data-categoria="electronica">
-                <img src="img/Impresora.png" alt="Impresora" class="producto-imagen">
-                <h3 class="producto-titulo">Impresora</h3>
-                <p class="producto-precio">USD 99.99</p>
-                <p class="producto-envio">Entrega el mié, 24 de abr</p>
-                <div data-tooltip="USD 99.99" class="button">
-                    <div class="button-wrapper">
-                        <div class="text">Ver</div>
-                        <a  href="producto.html">
+        <div class="producto" data-categoria="electronica">
+            <img src="img/Impresora.png" alt="Impresora" class="producto-imagen">
+            <h3 class="producto-titulo">Impresora</h3>
+            <p class="producto-precio">USD 99.99</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 99.99" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
                         <span class="icon">
                             <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
                                 xmlns="http://www.w3.org/2000/svg">
                             </svg>
                         </span>
-                        </a>
-                    </div>
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <div class="producto" data-categoria="pcs">
+        <div class="producto" data-categoria="pcs">
             <img src="img/teclado.png" alt="Teclado" class="producto-imagen">
             <h3 class="producto-titulo">Teclado</h3>
             <p class="producto-precio">USD 54</p>
@@ -149,12 +151,12 @@
             <div data-tooltip="USD 54" class="button">
                 <div class="button-wrapper">
                     <div class="text">Ver</div>
-                    <a  href="producto.html">
-                    <span class="icon">
-                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                            xmlns="http://www.w3.org/2000/svg">
-                        </svg>
-                    </span>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
                     </a>
                 </div>
             </div>
@@ -168,12 +170,12 @@
             <div data-tooltip="USD 54" class="button">
                 <div class="button-wrapper">
                     <div class="text">Ver</div>
-                    <a  href="producto.html">
-                    <span class="icon">
-                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                            xmlns="http://www.w3.org/2000/svg">
-                        </svg>
-                    </span>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
                     </a>
                 </div>
             </div>
@@ -187,346 +189,346 @@
             <div data-tooltip="USD 54" class="button">
                 <div class="button-wrapper">
                     <div class="text">Ver</div>
-                    <a  href="producto.html">
-                    <span class="icon">
-                        <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                            xmlns="http://www.w3.org/2000/svg">
-                        </svg>
-                    </span>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
                     </a>
                 </div>
             </div>
         </div>
-   
-    <div class="producto" data-categoria="celulares">
-        <img src="img/Telefono2.png" alt="Nombre del producto" class="producto-imagen">
-        <h3 class="producto-titulo">Telefono</h3>
-        <p class="producto-precio">USD 54</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
 
-    <div class="producto" data-categoria="pcs">
-        <img src="img/Auricular.png" alt="Nombre del producto" class="producto-imagen">
-        <h3 class="producto-titulo">Auricular</h3>
-        <p class="producto-precio">USD 40</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
+        <div class="producto" data-categoria="celulares">
+            <img src="img/Telefono2.png" alt="Nombre del producto" class="producto-imagen">
+            <h3 class="producto-titulo">Telefono</h3>
+            <p class="producto-precio">USD 54</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="producto" data-categoria="moda">
-        <img src="img/Abrigo.png" alt="Nombre del producto" class="producto-imagen">
-        <h3 class="producto-titulo">Abrigo</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
+        <div class="producto" data-categoria="pcs">
+            <img src="img/Auricular.png" alt="Nombre del producto" class="producto-imagen">
+            <h3 class="producto-titulo">Auricular</h3>
+            <p class="producto-precio">USD 40</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="producto" data-categoria="moda">
-        <img src="img/Vestido.png" alt="Vestido" class="producto-imagen">
-        <h3 class="producto-titulo">Vestido</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
 
-    <div class="producto" data-categoria="moda">
-        <img src="img/SkinCare.png" alt="SkinCare" class="producto-imagen">
-        <h3 class="producto-titulo">Skin Care</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
+        <div class="producto" data-categoria="moda">
+            <img src="img/Abrigo.png" alt="Nombre del producto" class="producto-imagen">
+            <h3 class="producto-titulo">Abrigo</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="producto" data-categoria="moda">
-        <img src="img/SkinCare1.png" alt="SkinCare" class="producto-imagen">
-        <h3 class="producto-titulo">Skin Care</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="producto" data-categoria="moda">
-        <img src="img/SkinCare2.png" alt="SkinCare" class="producto-imagen">
-        <h3 class="producto-titulo">Skin Care</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
 
-    <div class="producto" data-categoria="moda">
-        <img src="img/Conjunto.png" alt="Set falda y crop" class="producto-imagen">
-        <h3 class="producto-titulo">Set falda y crop</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
+        <div class="producto" data-categoria="moda">
+            <img src="img/Vestido.png" alt="Vestido" class="producto-imagen">
+            <h3 class="producto-titulo">Vestido</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
+        <div class="producto" data-categoria="moda">
+            <img src="img/SkinCare.png" alt="SkinCare" class="producto-imagen">
+            <h3 class="producto-titulo">Skin Care</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-    <div class="producto" data-categoria="pcs">
-        <img src="img/Accesorios1.png" alt="Accesorios" class="producto-imagen">
-        <h3 class="producto-titulo">Accesorios</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
+        <div class="producto" data-categoria="moda">
+            <img src="img/SkinCare1.png" alt="SkinCare" class="producto-imagen">
+            <h3 class="producto-titulo">Skin Care</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="producto" data-categoria="pcs">
-        <img src="img/Monitor.png" alt="Monitor" class="producto-imagen">
-        <h3 class="producto-titulo">Monitor</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
 
-    <div class="producto" data-categoria="pcs">
-        <img src="img/Gabinete.png" alt="Gabinete" class="producto-imagen">
-        <h3 class="producto-titulo">Gabinete</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-               </a> 
+        <div class="producto" data-categoria="moda">
+            <img src="img/SkinCare2.png" alt="SkinCare" class="producto-imagen">
+            <h3 class="producto-titulo">Skin Care</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="producto" data-categoria="pcs">
-        <img src="img/Mouse.png" alt="Mouse Gaming" class="producto-imagen">
-        <h3 class="producto-titulo">Mouse Gaming</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
 
-    <div class="producto" data-categoria="automoviles">
-        <img src="img/Automóviles.png" alt="Accesorios" class="producto-imagen">
-        <h3 class="producto-titulo">Accesorios</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
+        <div class="producto" data-categoria="moda">
+            <img src="img/Conjunto.png" alt="Set falda y crop" class="producto-imagen">
+            <h3 class="producto-titulo">Set falda y crop</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="producto" data-categoria="automoviles">
-        <img src="img/Automóviles1.png" alt="Accesorios" class="producto-imagen">
-        <h3 class="producto-titulo">Accesorios</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text">Ver</div>
-                <a  href="producto.html">
-                <span class="icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto" data-categoria="automoviles" >
-        <img src="img/Automóviles2.png" alt="Accesorios" class="producto-imagen">
-        <h3 class="producto-titulo">Accesorios</h3>
-        <p class="producto-precio">USD 23</p>
-        <p class="producto-envio">Entrega el mié, 24 de abr</p>
-        <div data-tooltip="USD 54" class="button">
-            <div class="button-wrapper">
-                <div class="text" >Ver</div>
-                <a  href="producto.html">
-                <span class="icon" >
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
-                        xmlns="http://www.w3.org/2000/svg">
-                    </svg>
-                </span>
-                </a>
-            </div>
-        </div>
-    </div>
 
 
-    <div id="empresa-list" class="empresa-container"></div>
-    <div id="location-container" class="location-container">
-        <h2>Ubicación Actual</h2>
-        <p id="latitude">Latitud: Cargando...</p>
-        <p id="longitude">Longitud: Cargando...</p>
-        <p id="location-name">Resultados basados en la ubicación Cargando...</p>
-    </div>
+        <div class="producto" data-categoria="pcs">
+            <img src="img/Accesorios1.png" alt="Accesorios" class="producto-imagen">
+            <h3 class="producto-titulo">Accesorios</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-    <script>
-        function toggleMenu() {
-            var categoriesList = document.getElementById('categoriesList');
-            if (categoriesList.style.display === 'block') {
-                categoriesList.style.display = 'none';
-            } else {
-                categoriesList.style.display = 'block';
+        <div class="producto" data-categoria="pcs">
+            <img src="img/Monitor.png" alt="Monitor" class="producto-imagen">
+            <h3 class="producto-titulo">Monitor</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto" data-categoria="pcs">
+            <img src="img/Gabinete.png" alt="Gabinete" class="producto-imagen">
+            <h3 class="producto-titulo">Gabinete</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto" data-categoria="pcs">
+            <img src="img/Mouse.png" alt="Mouse Gaming" class="producto-imagen">
+            <h3 class="producto-titulo">Mouse Gaming</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto" data-categoria="automoviles">
+            <img src="img/Automóviles.png" alt="Accesorios" class="producto-imagen">
+            <h3 class="producto-titulo">Accesorios</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto" data-categoria="automoviles">
+            <img src="img/Automóviles1.png" alt="Accesorios" class="producto-imagen">
+            <h3 class="producto-titulo">Accesorios</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto" data-categoria="automoviles">
+            <img src="img/Automóviles2.png" alt="Accesorios" class="producto-imagen">
+            <h3 class="producto-titulo">Accesorios</h3>
+            <p class="producto-precio">USD 23</p>
+            <p class="producto-envio">Entrega el mié, 24 de abr</p>
+            <div data-tooltip="USD 54" class="button">
+                <div class="button-wrapper">
+                    <div class="text">Ver</div>
+                    <a href="producto.html">
+                        <span class="icon">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="empresa-list" class="empresa-container"></div>
+        <div id="location-container" class="location-container">
+            <h2>Ubicación Actual</h2>
+            <p id="latitude">Latitud: Cargando...</p>
+            <p id="longitude">Longitud: Cargando...</p>
+            <p id="location-name">Resultados basados en la ubicación Cargando...</p>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                var categoriesList = document.getElementById('categoriesList');
+                if (categoriesList.style.display === 'block') {
+                    categoriesList.style.display = 'none';
+                } else {
+                    categoriesList.style.display = 'block';
+                }
             }
-        }
 
-        function obtenerNombreUbicacion(lat, lon) {
-            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('location-name').textContent = 'Resultados basados en la ubicación: ' + data.display_name;
-                })
-                .catch(error => {
-                    console.error('Error al obtener el nombre de la ubicación:', error);
-                });
-        }
+            function obtenerNombreUbicacion(lat, lon) {
+                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('location-name').textContent = 'Resultados basados en la ubicación: ' + data.display_name;
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener el nombre de la ubicación:', error);
+                    });
+            }
 
 
-        window.onload = function () {
-            const apiUrl = 'http://localhost:3000/api/empresa';
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const empresaListContainer = document.getElementById('empresa-list');
-                    const empresasHtml = data.map(empresa => `
+            window.onload = function () {
+                const apiUrl = 'http://localhost:3000/api/empresa';
+                fetch(apiUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const empresaListContainer = document.getElementById('empresa-list');
+                        const empresasHtml = data.map(empresa => `
                         <div class="empresa-item">
                             <h2>${empresa.empresa}</h2>
                             <p>${empresa.razon_social}</p>
@@ -535,34 +537,34 @@
                             <p><a href="mailto:${empresa.email}">${empresa.email}</a></p>
                         </div>
                     `).join('');
-                    empresaListContainer.innerHTML = empresasHtml;
-                })
-                .catch(error => {
-                    console.error('Error fetching empresa data:', error);
-                });
+                        empresaListContainer.innerHTML = empresasHtml;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching empresa data:', error);
+                    });
 
-            if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-                    document.getElementById('latitude').textContent = 'Latitud: ' + lat;
-                    document.getElementById('longitude').textContent = 'Longitud: ' + lon;
-                    obtenerNombreUbicacion(lat, lon);
-                }, function (error) {
-                    console.error('Error al obtener la ubicación:', error);
-                });
-            } else {
-                document.getElementById('latitude').textContent = 'Geolocalización no es soportada por este navegador.';
-                document.getElementById('longitude').style.display = 'none';
-                document.getElementById('location-name').textContent = 'Geolocalización no es soportada por este navegador.';
-            }
-        };
-        
+                if ("geolocation" in navigator) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        document.getElementById('latitude').textContent = 'Latitud: ' + lat;
+                        document.getElementById('longitude').textContent = 'Longitud: ' + lon;
+                        obtenerNombreUbicacion(lat, lon);
+                    }, function (error) {
+                        console.error('Error al obtener la ubicación:', error);
+                    });
+                } else {
+                    document.getElementById('latitude').textContent = 'Geolocalización no es soportada por este navegador.';
+                    document.getElementById('longitude').style.display = 'none';
+                    document.getElementById('location-name').textContent = 'Geolocalización no es soportada por este navegador.';
+                }
+            };
 
-    </script>
-    
 
-    
+        </script>
+
+
+
 </body>
 
 </html>
