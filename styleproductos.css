@@ -86,7 +86,7 @@ body, html {
     border: none;
     cursor: pointer;
     color: black;
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 1.2em; /* Tamaño más grande para 'Categorías' */
     font-weight: bold; 
 }
@@ -106,18 +106,6 @@ body, html {
     padding: 5px 20px;
 }
 
-.category-dropdown {
-  width: 100%;
-  background-color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: start; 
-  gap: 20px; /* Espacio entre elementos */
-  box-sizing: border-box;
-}
 .home-text, .store-text, .brand-text {
   display: flex;
   align-items: center;
@@ -143,38 +131,19 @@ body, html {
 .category-dropdown-btn.clicked + .categories-list {
     display: block;
 }
-/* Estilos para el botón categoria */
-.category-dropdown-btn {
-    background-color: transparent;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    align-items: center;
-    color: #0d0c0a; 
-}
 
-/* Estilos para el contenedor del menú de categorías */
-.category-dropdown {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
 
 /* Estilos para la lista de categorías */
 .categories-list {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    width: 200px; 
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0px 8px 16px 0px rgba(14, 13, 13, 0.2);
-    z-index: 1; 
-    list-style-type: none;
+  display: none;  /* Oculto inicialmente */
+  top: 100%;  /* Posiciona justo debajo del botón */
+  left: 0;
+  background-color: #fff;  /* Fondo blanco para la lista */
+  width: 180px;  /* Ancho fijo */
+  border: 1px solid #ccc;  /* Borde sutil */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Sombra para destacar */
+  z-index: 1000;  /* Asegura que se muestre sobre otros contenidos */
 }
-
 .category-dropdown-btn i, .home-text i, .store-text i, .brand-text i {
   color:  #db7f00;  
   margin-right: 3px; 
@@ -534,4 +503,43 @@ footer p {
 
 #productosDestacados, #categoriesList {
   transition: all 0.3s ease;  
+}
+@media (max-width: 768px) {
+  .top-nav {
+      flex-direction: column; /* Cambia la disposición a vertical */
+      align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .logo img {
+      margin-bottom: 10px; /* Añade espacio debajo del logo */
+  }
+
+  .search-container, .top-nav-right {
+      width: 100%; /* Hace que ocupen el ancho completo */
+      justify-content: center; /* Centra los elementos */
+      margin-top: 10px; /* Añade espacio arriba para separar de otros elementos */
+  }
+
+  .category-dropdown-btn {
+      width: 100%; /* Hace que el botón de categorías ocupe el ancho completo */
+  }
+
+  .categories-list {
+      width: 100%; /* Hace que la lista de categorías ocupe el ancho completo */
+      box-shadow: none; /* Opcional: Elimina la sombra para un look más limpio */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+      padding: 10px 5px; /* Reduce el padding para ahorrar espacio */
+  }
+
+  .search-container input[type="text"], .search-container button {
+      width: 100%; /* Ajusta la barra de búsqueda y el botón para que ocupen el ancho completo */
+  }
+
+  .top-nav-right a {
+      font-size: 0.8em; /* Reduce el tamaño de la fuente para los enlaces */
+  }
 }
