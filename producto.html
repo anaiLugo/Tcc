@@ -7,16 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styleproductos.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="top-nav">
             <a href="index.html" class="logo">
-                <img src="img/logoCS.png" alt="Logo">
+                <img src="img/logoCS.png" alt="Logo" style="height: 50px;">
             </a>
             <div class="search-container">
-                <input type="text" placeholder="Buscar...">
+                <input type="text" placeholder="Buscar..." style="padding: 5px;">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </div>
             <div class="top-nav-right">
@@ -34,9 +45,9 @@
                     <img src="img/Telefono.png" alt="Producto Principal" id="mainImage">
                 </div>
                 <div class="thumbnails">
-                    <img src="img/Telefono.png" alt="Thumbnail 1" class="thumbnail">
-                    <img src="img/Telefono2.png" alt="Thumbnail 2" class="thumbnail">
-                    <img src="img/Telefono1.png" alt="Thumbnail 3" class="thumbnail">
+                    <img src="img/Telefono.png" alt="Thumbnail 1" class="thumbnail" onclick="updateMainImage(this.src)">
+                    <img src="img/Telefono2.png" alt="Thumbnail 2" class="thumbnail" onclick="updateMainImage(this.src)">
+                    <img src="img/Telefono1.png" alt="Thumbnail 3" class="thumbnail" onclick="updateMainImage(this.src)">
                 </div>
             </div>
             <div class="product-info">
@@ -44,67 +55,69 @@
                 <p class="price">Precio: $54</p>
                 <p class="description">Descripción del producto Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <ul class="specs">
-                    <li>Especificación 1: Valor</li>
+                    <li>Especificación 1: 58</li>
                     <li>Especificación 2: Valor</li>
                     <li>Especificación 3: Valor</li>
                 </ul>
             </div>
         </div>
-        <input id="addressInput" type="text" placeholder="Escribe una dirección aquí..." style="margin-top: 10px; width: 300px;">
-        <div id="map" style="height: 400px; width: 100%;"></div>
+        <div id="map"></div>
+        <input type="text" id="address" placeholder="Dirección" style="width: 100%; margin-top: 10px;" />
+        <input type="text" id="lat" placeholder="Latitud" />
+        <input type="text" id="lng" placeholder="Longitud" />
+        <input type="text" id="googleMapLink" placeholder="Enlace de Google Maps" style="width: 100%; margin-top: 5px;" readonly />
     </div>
 
     <footer>
         <p>&copy; 2024 Click Store</p>
     </footer>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        // Función para cambiar la imagen principal al hacer clic en una miniatura
-        document.querySelectorAll('.thumbnail').forEach(item => {
-            item.addEventListener('click', event => {
-                const mainImage = document.getElementById('mainImage');
-                mainImage.src = item.src; // Cambia la fuente de la imagen principal a la de la miniatura
-            });
-        });
-
         function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -25.363, lng: 131.044},
-                zoom: 8
-            });
-            var marker = new google.maps.Marker({
-                map: map,
-                draggable: true,
-                position: {lat: -25.363, lng: 131.044}
-            });
+            const map = L.map('map').fitWorld();
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
 
-            var input = document.getElementById('addressInput');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-            autocomplete.bindTo('bounds', map);
+            const marker = L.marker([0, 0], { draggable: true }).addTo(map);
 
-            autocomplete.addListener('place_changed', function() {
-                var place = autocomplete.getPlace();
-                if (!place.geometry) {
-                    window.alert("No details available for input: '" + place.name + "'");
-                    return;
-                }
+            function onLocationFound(e) {
+                const location = e.latlng;
+                marker.setLatLng(location);
+                map.setView(location, 13);
+                updateLocationInfo(location);
+            }
 
-                if (place.geometry.viewport) {
-                    map.fitBounds(place.geometry.viewport);
-                } else {
-                    map.setCenter(place.geometry.location);
-                    map.setZoom(17);
-                }
+            map.on('locationfound', onLocationFound);
+            map.locate({ setView: true, maxZoom: 16 });
 
-                marker.setPosition(place.geometry.location);
+            marker.on('dragend', function(e) {
+                updateLocationInfo(marker.getLatLng());
             });
 
-            google.maps.event.addListener(marker, 'dragend', function() {
-                var pos = marker.getPosition();
-                map.panTo(pos);
+            map.on('click', function(e) {
+                marker.setLatLng(e.latlng);
+                updateLocationInfo(e.latlng);
             });
+
+            function updateLocationInfo(latlng) {
+                document.getElementById('lat').value = latlng.lat;
+                document.getElementById('lng').value = latlng.lng;
+                document.getElementById('googleMapLink').value = `https://maps.google.com/?q=${latlng.lat},${latlng.lng}`;
+                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latlng.lat}&lon=${latlng.lng}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('address').value = data.display_name || 'No address found';
+                    });
+            }
         }
+
+        function updateMainImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+
+        initMap();
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQGaUO4pj9oGNFbDYPspHJS5QzIyF0CtQ&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
