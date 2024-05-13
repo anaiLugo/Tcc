@@ -37,7 +37,6 @@
             <img src="img/Telefono.png" alt="Thumbnail 1">
             <img src="img/Telefono.png" alt="Thumbnail 2">
             <img src="img/Telefono.png" alt="Thumbnail 3">
-            <!-- Agrega más miniaturas según sea necesario -->
         </div>
         <div class="product-info">
             <h2>Nombre del Producto</h2>
@@ -48,19 +47,38 @@
                 <li>Especificación 1: Valor</li>
                 <li>Especificación 2: Valor</li>
                 <li>Especificación 3: Valor</li>
-                <!-- Agrega más especificaciones según sea necesario -->
             </ul>
-
-            <!-- <div class="button-wrapper">
-                <button class="buy-button">Comprar</button>
-            </div>
-            -->
         </div>
+        <div id="map" style="height: 400px; width: 100%;"></div> <!-- Contenedor del Mapa -->
     </div>
 
     <footer>
         <p>&copy; 2024 Click Store</p>
     </footer>
+
+    <script>
+        function initMap() {
+            var initialPosition = {lat: -25.363, lng: 131.044}; // Configura estas coordenadas según la ubicación deseada
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: initialPosition,
+                zoom: 8
+            });
+
+            var marker = new google.maps.Marker({
+                position: initialPosition,
+                map: map,
+                draggable: true
+            });
+
+            google.maps.event.addListener(marker, 'dragend', function() {
+                var lat = marker.getPosition().lat();
+                var lng = marker.getPosition().lng();
+                console.log(`Nueva posición: ${lat}, ${lng}`); // Puedes hacer algo con estas coordenadas
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 
 </html>
