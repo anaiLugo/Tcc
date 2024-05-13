@@ -543,3 +543,25 @@ footer p {
       font-size: 0.8em; /* Reduce el tamaño de la fuente para los enlaces */
   }
 }
+
+
+        .product-display {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+        .product-info {
+            flex: 2;
+            padding-left: 20px; /* Espacio entre las imágenes y la info del producto */
+        }
+        .main-image img, .thumbnail {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+       
+  
