@@ -1,0 +1,418 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Asegura que ocupa toda la ventana */
+  box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* contenedor */
+.top-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0e1216;
+    box-sizing: border-box;
+}
+
+/* Estilos para el logo */
+.logo img {
+    height: 60px; 
+}
+
+/* Estilos para la sección de la derecha del menú de navegación */
+.top-nav-right {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    
+}
+/* Estilos para los iconos en la sección top-nav-right */
+.top-nav-right a i {
+    color:  #db7f00; 
+}
+
+/* Estilos para los enlaces de la sección derecha */
+.top-nav-right a {
+    text-decoration: none; 
+    color: #ffffff;
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+/* Estilo para cuando se pasa el mouse sobre los enlaces */
+.top-nav-right a:hover {
+    color: #ffc800; 
+}
+
+/* Estilos para la barra de búsqueda */
+.search-container {
+    flex: 8px;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center;
+}
+
+/* Estilos para el campo de búsqueda */
+.search-container input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+    margin-right: 10px; /* Agregado margen derecho */
+}
+
+/* Estilos para el botón de búsqueda */
+.search-container button {
+    padding: 8px 16px;
+    background-color: rgb(234, 106, 2); 
+    color: #0e1216; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilo para cuando se pasa el mouse sobre el botón de búsqueda */
+.search-container button:hover {
+    background-color: #ffd700; 
+}
+/* Estilos para el botón de menú */
+.category-dropdown-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1.2em; /* Tamaño más grande para 'Categorías' */
+    font-weight: bold; 
+}
+
+.categories-list.show {
+  display: block;
+}
+
+.categories-list li {
+    padding: 5px 0;
+}
+
+.categories-list li a {
+    text-decoration: none;
+    color: #020202;
+    display: block;
+    padding: 5px 20px;
+}
+
+.category-dropdown {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: start; 
+  gap: 20px; /* Espacio entre elementos */
+  box-sizing: border-box;
+}
+.home-text, .store-text, .brand-text {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #db7f00;
+  font-weight: bold;
+  text-decoration: none;
+}
+.category-dropdown-btn, .home-text, .store-text, .brand-text {
+  font-family: Arial, sans-serif; 
+  color: rgb(15, 15, 15); 
+}
+.home-text {
+  margin-left: auto; 
+}
+.categories-list li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mostrar la lista de categorías cuando el botón es clickeado */
+.category-dropdown-btn.clicked + .categories-list {
+    display: block;
+}
+/* Estilos para el botón categoria */
+.category-dropdown-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    align-items: center;
+    color: #0d0c0a; 
+}
+
+/* Estilos para el contenedor del menú de categorías */
+.category-dropdown {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Estilos para la lista de categorías */
+.categories-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 200px; 
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 8px 16px 0px rgba(14, 13, 13, 0.2);
+    z-index: 1; 
+    list-style-type: none;
+}
+
+.category-dropdown-btn i, .home-text i, .store-text i, .brand-text i {
+  color:  #db7f00;  
+  margin-right: 3px; 
+}
+.categories-list li {
+    padding: 5px 0;
+}
+
+.categories-list li a {
+    text-decoration: none;
+    color: #020202;
+    display: block;
+}
+
+.categories-list li a:hover {
+    background-color: #db7f00;
+}
+
+/* Mostrar la lista de categorías cuando el botón es clickeado */
+.category-dropdown-btn.clicked + .categories-list {
+    display: block;
+}
+/* Estilos para el botón de menú */
+.category-dropdown-btn i {
+    margin-right: 5px; 
+}
+
+@media (max-width: 768px) {
+  .top-nav, .category-dropdown {
+      flex-direction: column; /* Alinea los elementos verticalmente en pantallas pequeñas */
+      padding: 10px;
+  }
+
+  .category-dropdown-btn, .home-text, .store-text, .brand-text {
+      padding: 5px 0; /* Espaciado vertical para elementos apilados */
+  }
+}
+
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay espacio */
+    justify-content: space-around; /* Distribuye el espacio de manera uniforme */
+    align-items: stretch; /* Estira los elementos para que tengan la misma altura */
+}
+
+.producto-imagen {
+  width: 100%; /* Asegura que la imagen ocupa todo el ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-height: 200px; /* Limita la altura máxima de la imagen */
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro de su contenedor sin ser recortada */
+  border-radius: 5px; /* Opcional: añade bordes redondeados a la imagen */
+  display: block; /* Asegura que la imagen no tenga espacio extra alrededor */
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto debajo de ella */
+}
+.empresa-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .empresa-container > div {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 700px;
+    background-color: white;
+  }
+  
+  .empresa-container h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+
+  .empresa-container p {
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .empresa-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .empresa-container a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .button {
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  .button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .button::after,.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+
+  .button-wrapper {
+    width: 100%; 
+    margin-top: auto; 
+    display: flex;
+    justify-content: center; 
+}
+
+  .text {
+    top: 0
+  }
+  
+  .text,.icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .button:hover {
+    background: #010101;
+  }
+  
+  .button:hover .text {
+    top: -100%;
+  }
+  
+  .button:hover .icon {
+    top: 0;
+  }
+  
+  .button:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+  /*****/
+  
+  
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+  
+
+.producto {
+  flex: 1 1 calc(33.33% - 20px); 
+  margin: 10px;
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  width: calc(50% - 40px); 
+  text-align: center;
+}
+
+
+
+/*
+*/
+
